@@ -875,8 +875,6 @@ pause_function
 check_boot_system
 check_connection
 check_trim
-pacman -S networkmanager
-systemctl enable NetworkManager
 pacman -Sy
 while true; do
   print_title "ARCHLINUX ULTIMATE INSTALL - https://github.com/helmuthdu/aui"
