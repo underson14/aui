@@ -3,6 +3,9 @@
 #shellcheck disable=SC1001,SC1091,SC2001,SC2010,SC2015,SC2034,SC2104,SC2154
 #shellcheck disable=SC2154,SC2153,SC2155,SC2165,SC2167,SC2181,SC2207
 
+pacman -S networkmanager
+systemctl enable NetworkManager
+
 : 'ATTENTION!:
 --------------------------------------------------
 |  Created by helmuthdu <helmuthdu@gmail.com>    |
@@ -862,11 +865,11 @@ install_video_cards(){
   #}}}
   #Intel {{{
   elif [[ ${VIDEO_DRIVER} == intel ]]; then
-    package_install "xf86-video-${VIDEO_DRIVER} mesa-libgl libvdpau-va-gl"
+    package_install "xf86-video-${VIDEO_DRIVER} mesa-libgl libvdpau-va-gl libva-intel-driver vulkan-intel"
   #}}}
   #Vesa {{{
   else
-    package_install "xf86-video-${VIDEO_DRIVER} mesa-libgl libvdpau-va-gl"
+    package_install "xf86-video-${VIDEO_DRIVER} mesa-libgl libvdpau-va-gl libva-intel-driver vulkan-intel"
   fi
   #}}}
   if [[ ${ARCHI} == x86_64 ]]; then
