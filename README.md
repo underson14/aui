@@ -26,7 +26,7 @@ This project is not actively developed but *will* accept Pull Requests.
 ### With git
 - Increase cowspace partition: `mount -o remount,size=6G /run/archiso/cowspace`
 - Get list of packages and install git: `pacman -Sy git`
-- Get the script: `git clone https://github.com/underson14/aui`
+- Get the script: `git clone https://github.com/underson14/aui.git`
 
 ### Without git
 - Increase cowspace partition: `mount -o remount,size=2G /run/archiso/cowspace`
