@@ -798,6 +798,8 @@ configure_bootloader() {
           img_name="linux-lts"
         elif [ "$(arch-chroot "${MOUNTPOINT}" ls /boot | grep zen -c)" -gt "0" ]; then
           img_name="linux-zen"
+	elif [ "$(arch-chroot "${MOUNTPOINT}" ls /boot | grep xanmod -c)" -gt "0" ]; then
+          img_name="linux-xanmod"
         else
           img_name="linux"
         fi
