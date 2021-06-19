@@ -765,6 +765,8 @@ create_ramdisk_environment(){
     mkinitcpio -p linux-lts
   elif [ "$(ls /boot | grep zen -c)" -gt "0" ]; then
     mkinitcpio -p linux-zen
+  elif [ "$(ls /boot | grep xanmod -c)" -gt "0" ]; then
+    mkinitcpio -p linux-xanmod    
   else
     mkinitcpio -p linux
   fi
@@ -778,7 +780,7 @@ install_video_cards(){
     if [ "$(lspci | grep 'VMware SVGA' -c)" -gt "0" ]; then
       package_install "xf86-video-vmware"
     fi
-    if [ "$(ls /boot | grep hardened -c)" -gt "0" ] || [ "$(ls /boot | grep lts -c)" -gt "0" ] || [ "$(ls /boot | grep zen -c)" -gt "0" ]; then
+    if [ "$(ls /boot | grep hardened -c)" -gt "0" ] || [ "$(ls /boot | grep lts -c)" -gt "0" ] || [ "$(ls /boot | grep zen -c)" -gt "0" ] || [ "$(ls /boot | grep xanmod -c)" -gt "0" ]; then
       package_install "virtualbox-guest-dkms virtualbox-guest-utils mesa-libgl"
     else
       package_install "virtualbox-guest-modules-arch virtualbox-guest-utils mesa-libgl"
