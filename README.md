@@ -24,6 +24,9 @@ This project is not actively developed but *will* accept Pull Requests.
 
 ## Obtaining The Repository
 ### With git
+
+- change keyboard to abnt2 br : loadkeys br-abnt2
+- update pacman : pacman -Syu
 - Increase cowspace partition: `mount -o remount,size=6G /run/archiso/cowspace`
 - Get list of packages and install git: `pacman -Sy git`
 - Get the script: `git clone https://github.com/underson14/aui.git`
